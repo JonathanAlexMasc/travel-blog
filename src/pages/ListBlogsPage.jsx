@@ -6,7 +6,7 @@ import axios from 'axios';
 async function getData() {
     const response = await axios({
         method: 'get',
-        url: 'http://localhost:1337/api/blogs'
+        url: 'http://192.168.4.41:1337/api/blogs'
     });
 
     const { data } = await response;

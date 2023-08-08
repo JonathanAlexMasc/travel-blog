@@ -3,7 +3,8 @@ import Navbar from './components/Navbar';
 import AboutMe from './components/AboutMe';
 import BlogPage from './pages/BlogPage';
 import ListBlogsPage from './pages/ListBlogsPage';
-import NavScrollExample from './components/Footer';
+import Footer from './components/Footer';
+import "./App.css";
 
 import { createBrowserRouter, Routes, Route, Link, createRoutesFromElements, RouterProvider } from 'react-router-dom';
 import HomePage from './pages/HomePage';
@@ -22,14 +23,10 @@ const router = createBrowserRouter(
 
 function App() {
   return (
-    <div className='d-flex flex-column'>
-      <div className='mb-auto'>
-        <Navbar />
-        <RouterProvider router={router} />
-      </div>
-      <div className='mt-auto'>
-        <NavScrollExample />
-      </div>
+    <div className='d-flex flex-column mh-100'>
+      <Navbar />
+      <RouterProvider router={router} />
+      <Footer />
     </div>
   );
 }
