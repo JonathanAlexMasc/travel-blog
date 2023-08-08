@@ -3,8 +3,6 @@ import { Container } from "react-bootstrap";
 import { Card } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import { Row, Col } from "react-bootstrap";
-import { Image } from "react-bootstrap";
-import palm from './palm.jpg'
 //this is the main blog component
 import axios from 'axios';
 
