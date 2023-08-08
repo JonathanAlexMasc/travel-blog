@@ -27,7 +27,7 @@ export default function Footer() {
                 </form>
             </MDBContainer>
 
-            <div className='text-center p-3' style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
+            <div className='text-center p-3'>
                 &copy; {new Date().getFullYear()} Copyright:{' '}
                 <a className='text-white' href=''>
                     The Goan Traveller

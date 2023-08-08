@@ -4,7 +4,7 @@ import PreviewBlog from "../components/PreviewBlog";
 
 export default function HomePage() {
     return (
-        <Container className="d-flex flex-column align-content-center mt-4 mb-4">
+        <Container fluid className="d-flex flex-column align-items-center bg-body-secondary">
             <PreviewBlog />
         </Container>
     )

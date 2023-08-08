@@ -8,10 +8,12 @@ import "./App.css";
 
 import { createBrowserRouter, Routes, Route, Link, createRoutesFromElements, RouterProvider } from 'react-router-dom';
 import HomePage from './pages/HomePage';
+import NotFound from './pages/NotFound';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
+      <Route path='*' element={<NotFound />} />
       <Route path="/" element={<HomePage />} />
       <Route path="/about" element={<AboutMe />} />
       <Route path="/listblogs/blog/:blogId" element={<BlogPage />} />

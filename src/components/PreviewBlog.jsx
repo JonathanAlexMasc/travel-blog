@@ -48,7 +48,7 @@ export default function PreviewBlog() {
     }, [])
 
     return (
-        <Container>
+        <Container className="m-3">
             <Container className="d-inline-flex mb-3">
                 <h1>Featured Posts</h1>
                 <i className="fa-solid fa-star fa-xl center mt-4 mx-3" style={{ color: "#ffd877", }}></i>
