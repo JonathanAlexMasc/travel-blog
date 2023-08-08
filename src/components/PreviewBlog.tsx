@@ -7,7 +7,7 @@ import { Image } from "react-bootstrap";
 import palm from './palm.jpg'
 //this is the main blog component
 
-export default function Blog() {
+export default function PreviewBlog() {
     //date object
     let date: Date = new Date();
 
