@@ -9,24 +9,41 @@ import palm from './palm.jpg'
 import axios from 'axios';
 
 function getUrl(obj) {
-    return obj.attributes.highlight_image.data.attributes.url;
+    //console.log("myObj", obj.attributes.cover.data.attributes.url);
+    return obj.attributes.cover.data.attributes.url;
 }
+
+
 
 export default function PreviewBlog() {
 
     const [imgUrlArray, setImgUrlArray] = useState([""]);
-    console.log("imgIrljfboilbgsog", imgUrlArray);
+    //console.log("imgIrljfboilbgsog", imgUrlArray);
+    const [blogsArray, setBlogsArray] = useState([]);
 
     useEffect(() => {
-        axios.get('http://192.168.4.41:1337/api/images?populate=*').then(res => {
-            console.log(res.data.data)
+        axios.get('http://192.168.4.41:1337/api/blogs?populate=*').then(res => {
+            //console.log(res.data.data)
             let topLevelArray = res.data.data;
             let urlArr = [];
             topLevelArray.map((eachObject) => {
                 urlArr.push(getUrl(eachObject));
             })
-            console.log("my url array", urlArr);
+            console.log("my image url array", topLevelArray);
             setImgUrlArray(urlArr);
+        });
+    }, [])
+
+    useEffect(() => {
+        axios.get('http://192.168.4.41:1337/api/blogs').then(res => {
+            //console.log(res.data.data)
+            let topLevelArray = res.data.data;
+            let blogsArr = [];
+            topLevelArray.map((eachObject) => {
+                blogsArr.push(eachObject.attributes);
+            })
+            console.log("my blogs array", blogsArr);
+            setBlogsArray(blogsArr);
         });
     }, [])
 
@@ -34,19 +51,17 @@ export default function PreviewBlog() {
         <Container>
             <Container className="d-inline-flex mb-3">
                 <h1>Featured Posts</h1>
-                <i class="fa-solid fa-star fa-xl center mt-4 mx-3"></i>
+                <i className="fa-solid fa-star fa-xl center mt-4 mx-3" style={{ color: "#ffd877", }}></i>
             </Container>
             <Row xs={1} md={2} className="g-4">
-                {Array.from({ length: 4 }).map((_, idx) => (
+                {blogsArray.map((singleBlog, idx) => (
                     <Col key={idx}>
                         <Card className="h-100">
-                            <Card.Img fluid variant="top" src={"http://192.168.4.41:1337" + imgUrlArray[idx]} className="h-100" />
+                            <Card.Img variant="top" src={"http://192.168.4.41:1337" + imgUrlArray[idx]} className="h-100" />
                             <Card.Body>
-                                <Card.Title>Card title</Card.Title>
+                                <Card.Title>{singleBlog.Title}</Card.Title>
                                 <Card.Text>
-                                    This is a longer card with supporting text below as a natural
-                                    lead-in to additional content. This content is a little bit
-                                    longer.
+                                    {singleBlog.preview}
                                 </Card.Text>
                             </Card.Body>
                         </Card>
