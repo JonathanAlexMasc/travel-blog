@@ -32,9 +32,9 @@ export default function PreviewBlog() {
 
     return (
         <Container>
-            <Container className="d-flex gap-2">
+            <Container className="d-inline-flex mb-3">
                 <h1>Featured Posts</h1>
-                <FontAwesomeIcon icon="fa-solid fa-star" />
+                <i class="fa-solid fa-star fa-xl center mt-4 mx-3"></i>
             </Container>
             <Row xs={1} md={2} className="g-4">
                 {Array.from({ length: 4 }).map((_, idx) => (
