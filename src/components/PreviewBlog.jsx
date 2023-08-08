@@ -47,9 +47,10 @@ export default function PreviewBlog() {
 
     return (
         <Container className="m-3">
-            <Container className="d-inline-flex mb-3">
-                <h1>Featured Posts</h1>
-                <i className="fa-solid fa-star fa-xl center mt-4 mx-3" style={{ color: "#ffd877", }}></i>
+            <Container className="d-inline-flex mb-3 align-items-evenly">
+                <div>
+                    <h1>Featured Posts <i className="fa-solid fa-star center mx-1" style={{ color: "#ffd877", }}></i></h1>
+                </div>
             </Container>
             <Row xs={1} md={2} className="g-4">
                 {blogsArray.map((singleBlog, idx) => (
