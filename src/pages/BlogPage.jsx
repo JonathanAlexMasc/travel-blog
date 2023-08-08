@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Container, Image } from "react-bootstrap";
-import { useLocation } from "react-router-dom";
 import axios from 'axios';
 
 export default function BlogPage() {
@@ -18,7 +17,6 @@ export default function BlogPage() {
         });
 
         const { data } = await response;
-        // console.log(data);
         setBlogContents(data.data.attributes);
     }
 

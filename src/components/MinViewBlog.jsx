@@ -1,6 +1,5 @@
 import React from "react";
 import { Container, Image } from "react-bootstrap";
-import sunsetImg from "./sunset-beach.jpg";
 import { Link } from "react-router-dom";
 
 export default function MinViewBlog({ id, title, description, author, date }) {
