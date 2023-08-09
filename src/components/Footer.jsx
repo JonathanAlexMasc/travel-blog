@@ -4,35 +4,66 @@ import { Container } from 'react-bootstrap';
 
 export default function Footer() {
     return (
-        <MDBFooter bgColor='dark' className='text-center text-white text-lg-left'>
-            <MDBContainer className='p-4 pb-0'>
-                <form action=''>
-                    <MDBRow className='d-flex justify-content-center'>
-                        <MDBCol size='auto' className='mb-4 mb-md-0'>
-                            <p className='pt-2'>
-                                <strong>Sign up for our newsletter</strong>
-                            </p>
-                        </MDBCol>
+        <div className='bg-secondary' data-bs-theme="dark">
+            <div class="container my-2">
+                <footer class="text-center text-white">
+                    <div class="container pt-4">
+                        <section class="mb-2">
+                            <a
+                                class="btn btn-link btn-floating btn-lg text-dark m-1"
+                                href="#!"
+                                role="button"
+                                data-mdb-ripple-color="dark"
+                            ><i class="fab fa-facebook-f"></i
+                            ></a>
 
-                        <MDBCol md='5' size='12' className='mb-4 mb-md-0'>
-                            <MDBInput type='text' id='form5Example2' contrast />
-                        </MDBCol>
+                            <a
+                                class="btn btn-link btn-floating btn-lg text-dark m-1"
+                                href="#!"
+                                role="button"
+                                data-mdb-ripple-color="dark"
+                            ><i class="fab fa-twitter"></i
+                            ></a>
 
-                        <MDBCol size='auto' className='mb-4 mb-md-0'>
-                            <MDBBtn outline color='light'>
-                                Subscribe
-                            </MDBBtn>
-                        </MDBCol>
-                    </MDBRow>
-                </form>
-            </MDBContainer>
+                            <a
+                                class="btn btn-link btn-floating btn-lg text-dark m-1"
+                                href="#!"
+                                role="button"
+                                data-mdb-ripple-color="dark"
+                            ><i class="fab fa-google"></i
+                            ></a>
 
-            <div className='text-center p-3'>
-                &copy; {new Date().getFullYear()} Copyright:{' '}
-                <a className='text-white' href=''>
-                    The Goan Traveller
-                </a>
+                            <a
+                                class="btn btn-link btn-floating btn-lg text-dark m-1"
+                                href="#!"
+                                role="button"
+                                data-mdb-ripple-color="dark"
+                            ><i class="fab fa-instagram"></i
+                            ></a>
+
+                            <a
+                                class="btn btn-link btn-floating btn-lg text-dark m-1"
+                                href="#!"
+                                role="button"
+                                data-mdb-ripple-color="dark"
+                            ><i class="fab fa-linkedin"></i
+                            ></a>
+                            <a
+                                class="btn btn-link btn-floating btn-lg text-dark m-1"
+                                href="#!"
+                                role="button"
+                                data-mdb-ripple-color="dark"
+                            ><i class="fab fa-github"></i
+                            ></a>
+                        </section>
+                    </div>
+
+                    <div class="text-center text-dark p-3">
+                        © 2020 Copyright:
+                        <a class="text-dark" href="/">The Goan Traveller</a>
+                    </div>
+                </footer>
+
             </div>
-        </MDBFooter>
-    );
+        </div>);
 }
