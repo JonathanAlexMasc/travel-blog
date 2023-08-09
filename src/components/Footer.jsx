@@ -4,49 +4,24 @@ import { Container } from 'react-bootstrap';
 export default function Footer() {
     return (
         <div className="bg-body-tertiary" data-bs-theme='dark'>
-            <div className="container my-2">
+            <div className="container">
                 <footer className="text-center text-white">
                     <div className="container pt-4">
                         <section className="mb-2">
-                            <i className="fa-brands fa-facebook fa-2xl" style={{ color: "#ffffff" }}></i>
-                            <a
-                                className="btn btn-link btn-floating btn-lg text-dark m-1"
-                                href="#!"
-                                role="button"
-                                data-mdb-ripple-color="dark"
-                            ><i className="fab fa-twitter"></i
-                            ></a>
 
-                            <a
-                                className="btn btn-link btn-floating btn-lg text-dark m-1"
-                                href="#!"
-                                role="button"
-                                data-mdb-ripple-color="dark"
-                            ><i className="fab fa-google"></i
-                            ></a>
+                            <h6>
+                                <i className="fa-brands fa-facebook fa-2xl mx-2" style={{ color: "#ffffff" }}></i>
 
-                            <a
-                                className="btn btn-link btn-floating btn-lg text-dark m-1"
-                                href="#!"
-                                role="button"
-                                data-mdb-ripple-color="dark"
-                            ><i className="fab fa-instagram"></i
-                            ></a>
+                                <i className="fa-brands fa-twitter fa-2xl mx-2" style={{ color: "#ffffff" }}></i>
 
-                            <a
-                                className="btn btn-link btn-floating btn-lg text-dark m-1"
-                                href="#!"
-                                role="button"
-                                data-mdb-ripple-color="dark"
-                            ><i className="fab fa-linkedin"></i
-                            ></a>
-                            <a
-                                className="btn btn-link btn-floating btn-lg text-dark m-1"
-                                href="#!"
-                                role="button"
-                                data-mdb-ripple-color="dark"
-                            ><i className="fab fa-github"></i
-                            ></a>
+                                <i className="fa-brands fa-google fa-2xl mx-2" style={{ color: "#ffffff" }}></i>
+
+                                <i className="fa-brands fa-instagram fa-2xl mx-2" style={{ color: "#ffffff" }}></i>
+
+                                <i className="fa-brands fa-linkedin fa-2xl mx-2" style={{ color: "#ffffff" }}></i>
+
+                                <i className="fa-brands fa-github fa-2xl mx-2" style={{ color: "#ffffff" }}></i>
+                            </h6>
                         </section>
                     </div>
 

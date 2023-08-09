@@ -3,6 +3,7 @@ import { Container } from "react-bootstrap";
 import { Card } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import { Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
 //this is the main blog component
 import axios from 'axios';
 
@@ -10,8 +11,6 @@ function getUrl(obj) {
     //console.log("myObj", obj.attributes.cover.data.attributes.url);
     return obj.attributes.cover.data.attributes.url;
 }
-
-
 
 export default function PreviewBlog() {
 
@@ -58,7 +57,7 @@ export default function PreviewBlog() {
                         <Card className="h-100">
                             <Card.Img variant="top" src={"http://192.168.4.41:1337" + imgUrlArray[idx]} className="h-100" />
                             <Card.Body>
-                                <Card.Title>{singleBlog.Title}</Card.Title>
+                                <Link to={`/listblogs/blog/${idx + 1}`}><Card.Title>{singleBlog.Title}</Card.Title></Link>
                                 <Card.Text>
                                     {singleBlog.preview}
                                 </Card.Text>

@@ -8,24 +8,24 @@ import ayothatsme from './ayothatsme.jpg';
 export default function AboutMe() {
     return (
         <Container fluid className="d-flex flex-column align-items-center my-4">
-            <Container fluid className="d-flex align-items-start bg-dark">
-                <Container fluid className="bg-dark-subtle p-4 m-3">
+            <Container fluid className="d-flex align-items-center bg-dark">
+                <Container fluid className="bg-dark-subtle my-3 py-3 align-items-center">
                     <h4>Hello <i className="fa-regular fa-face-smile"></i> My name is Jonathan Mascarenhas, and I am the writer and developer of this blog. I'm originally from a small town in Goa called Curtorim, and a computer science major at the South Dakota School of Mines and Technology located in South Dakota, USA. <i className="fa-solid fa-flag-usa" style={{ color: "#0056d6" }}></i></h4>
                     <br /><br />
 
                     <h4>Feel free to contact me through any of the channels listed below - I'm open to new opportunities in software engineering/tech, and I'm also interested in building custom websites like this one for clients. <i className="fa-regular fa-face-laugh"></i></h4>
                     <br /><br /><br />
 
-                    <div className="d-flex gap-3 m-5 align-items-center">
-                        <i className="fa-brands fa-linkedin fa-2xl"></i>
-                        <i className="fa-brands fa-instagram fa-2xl"></i>
-                        <i className="fa-brands fa-twitter fa-2xl"></i>
-                        <i className="fa-solid fa-envelope fa-2xl"></i>
+                    <div className="d-flex gap-3 m-5">
+                        <i className="fa-brands fa-linkedin fa-2xl mx-2"></i>
+                        <i className="fa-brands fa-instagram fa-2xl mx-2"></i>
+                        <i className="fa-brands fa-twitter fa-2xl mx-2"></i>
+                        <i className="fa-solid fa-envelope fa-2xl mx-2"></i>
                     </div>
 
                 </Container>
             </Container>
-            <Container fluid className="d-flex flex-column text-white text-center bg-secondary m-3 p-3 w-75" data-bs-theme="dark">
+            <Container fluid className="d-flex flex-column text-white text-center bg-secondary m-3 p-3 align-items-center" data-bs-theme="dark">
                 <p className="m-3 font-monospace">
                     Welcome to my blog.
                 </p>
