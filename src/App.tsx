@@ -9,7 +9,6 @@ import "./App.css";
 import { createBrowserRouter, Routes, Route, Link, createRoutesFromElements, RouterProvider } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import NotFound from './pages/NotFound';
-import ContactPage from './pages/ContactPage';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -17,7 +16,6 @@ const router = createBrowserRouter(
       <Route path='*' element={<NotFound />} />
       <Route path="/" element={<HomePage />} />
       <Route path="/about" element={<AboutMe />} />
-      <Route path="/about/contact" element={<ContactPage />} />
       <Route path="/listblogs/blog/:blogId" element={<BlogPage />} />
       <Route path="/listblogs" element={<ListBlogsPage />} />
     </Route>
