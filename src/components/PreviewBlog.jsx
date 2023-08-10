@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import { Card } from "react-bootstrap";
-import { Button } from "react-bootstrap";
 import { Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 //this is the main blog component
@@ -23,8 +22,8 @@ export default function PreviewBlog() {
             //console.log(res.data.data)
             let topLevelArray = res.data.data;
             let urlArr = [];
-            topLevelArray.map((eachObject) => {
-                urlArr.push(getUrl(eachObject));
+            urlArr = topLevelArray.map((eachObject) => {
+                return getUrl(eachObject);
             })
             console.log("my image url array", topLevelArray);
             setImgUrlArray(urlArr);
@@ -36,8 +35,8 @@ export default function PreviewBlog() {
             //console.log(res.data.data)
             let topLevelArray = res.data.data;
             let blogsArr = [];
-            topLevelArray.map((eachObject) => {
-                blogsArr.push(eachObject.attributes);
+            blogsArr = topLevelArray.map((eachObject) => {
+                return (eachObject.attributes);
             })
             console.log("my blogs array", blogsArr);
             setBlogsArray(blogsArr);
