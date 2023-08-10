@@ -1,7 +1,5 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import { Card, Image } from "react-bootstrap";
-import ayothatsme from './ayothatsme.jpg';
 
 //note - image dimensions are in pixels
 

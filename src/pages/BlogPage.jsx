@@ -31,10 +31,14 @@ export default function BlogPage() {
         setBlogImg(imgUrl);
     }
 
+    // eslint-disable-next-line
     useEffect(() => {
         getData();
+    });
+    // eslint-disable-next-line
+    useEffect(() => {
         getImage();
-    }, []);
+    })
 
     return (
         <Container className="d-flex flex-column justify-content-left">

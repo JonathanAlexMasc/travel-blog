@@ -6,7 +6,7 @@ import ListBlogsPage from './pages/ListBlogsPage';
 import Footer from './components/Footer';
 import "./App.css";
 
-import { createBrowserRouter, Routes, Route, Link, createRoutesFromElements, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, Route, createRoutesFromElements, RouterProvider } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import NotFound from './pages/NotFound';
 
