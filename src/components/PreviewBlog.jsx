@@ -33,14 +33,9 @@ export default function PreviewBlog() {
 
     useEffect(() => {
         axios.get('https://tgtbackend.onrender.com/api/blogs').then(res => {
-            //console.log(res.data.data)
-            let topLevelArray = res.data.data;
-            let blogsArr = [];
-            blogsArr = topLevelArray.map((eachObject) => {
-                return (eachObject.attributes);
-            })
-            console.log("my blogs array", blogsArr);
-            setBlogsArray(blogsArr);
+            let topLevelArray = res.data;
+            console.log("my blogs array", topLevelArray.data);
+            setBlogsArray(topLevelArray.data);
         });
     }, [])
 
@@ -53,15 +48,19 @@ export default function PreviewBlog() {
             </Container>
             <Row xs={1} md={2} className="g-4">
                 {blogsArray.map((singleBlog, idx) => (
-                    <Col key={idx}>
+                    <Col key={singleBlog.id}>
                         <Card className="h-100">
                             <Card.Img variant="top" src={imgUrlArray[idx]} className="h-100" />
                             <Card.Body>
-                                <Link to={`/listblogs/blog/${idx + 1}`}><Card.Title>{singleBlog.blogtitle}</Card.Title></Link>
+                                <Link to={`/listblogs/blog/${singleBlog.id}`}><Card.Title>{singleBlog.attributes.blogtitle}</Card.Title></Link>
                                 <Card.Text>
-                                    {singleBlog.preview}
+                                    {singleBlog.attributes.blogpreview}
+                                </Card.Text>
+                                <Card.Text>
+                                    {singleBlog.attributes.id}
                                 </Card.Text>
                             </Card.Body>
+
                         </Card>
                     </Col>
                 ))}
