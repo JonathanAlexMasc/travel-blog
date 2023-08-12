@@ -6,7 +6,7 @@ import axios from 'axios';
 async function getData() {
     const response = await axios({
         method: 'get',
-        url: 'http://192.168.4.41:1337/api/blogs'
+        url: 'https://tgtbackend.onrender.com/api/blogs'
     });
 
     const { data } = await response;
@@ -27,7 +27,7 @@ export default function ListBlogsPage() {
             {/* iterating through every blogpost */}
             {blogArray.map((obj) => {
                 const atts = obj.attributes;
-                return (< MinViewBlog key={obj.id} id={obj.id} author={atts.Author} title={atts.Title} description={atts.Description} date={atts.publishedDate} preview={atts.preview} />)
+                return (< MinViewBlog key={obj.id} id={obj.id} author={atts.blogauthor} title={atts.blogtitle} description={atts.blogdesc} date={atts.blogdate} preview={atts.blogpreview} />)
             })}
         </div>
     )

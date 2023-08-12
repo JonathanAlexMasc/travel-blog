@@ -2,14 +2,17 @@ import React, { useState, useEffect } from "react";
 import { Container, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import axios from 'axios';
+
 async function getImage(id) {
-    const response = await axios.get(`http://192.168.4.41:1337/api/blogs/${id}?populate=*`);
+    const response = await axios.get(`https://tgtbackend.onrender.com/api/blogs/${id}?populate=*`);
     const { data } = response;
-    const cover = data.data.attributes.cover;
+
+    const cover = data.data.attributes.blogimg;
+    console.log("inspecing cover...", cover);
     const coverURL = cover.data.attributes.url;
     //const coverImg = cover.data.attributes.formats.large;
     // console.log('http://localhost:1337' + blogImg.url); - this is what I needed to load the //imageverImg
-    console.log(cover);
+    console.log(coverURL);
     return coverURL;
 }
 
@@ -24,7 +27,7 @@ export default function MinViewBlog({ id, title, author, date, preview }) {
         <div>
             <Container className="d-flex flex-column flex-lg-row my-3 p-4 gap-5 ">
                 <Container fluid>
-                    <Image src={'http://192.168.4.41:1337' + blogImg} fluid className="mr-4 img-responsive" style={{ width: "900px", height: "380px" }} />
+                    <Image src={blogImg} fluid className="mr-4 img-responsive" style={{ width: "900px", height: "380px" }} />
                 </Container>
                 <Container fluid className="d-flex flex-column mr-5 gap-2 justify-content-evenly">
                     <div className="d-flex flex-row">

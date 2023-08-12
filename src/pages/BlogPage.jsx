@@ -9,11 +9,12 @@ export default function BlogPage() {
     const params = window.location.pathname;
     //console.log("my url params", params.substring(params.lastIndexOf('/') + 1));
     const currId = params.substring(params.lastIndexOf('/') + 1);
+    console.log("current id", currId);
 
     async function getData() {
         const response = await axios({
             method: 'get',
-            url: 'http://192.168.4.41:1337/api/blogs/' + currId,
+            url: 'https://tgtbackend.onrender.com/api/blogs/' + currId,
         });
 
         const { data } = await response;
@@ -21,9 +22,9 @@ export default function BlogPage() {
     }
 
     async function getImage() {
-        const response = await axios.get(`http://192.168.4.41:1337/api/blogs/${currId}?populate=*`)
+        const response = await axios.get(`https://tgtbackend.onrender.com/api/blogs/${currId}?populate=*`)
         const { data } = response;
-        const cover = data.data.attributes.cover;
+        const cover = data.data.attributes.blogimg;
         const imgUrl = cover.data.attributes.url;
         //const coverImg = cover.data.attributes.formats.large;
         // console.log('http://localhost:1337' + blogImg.url); - this is what I needed to load the //image
@@ -34,20 +35,22 @@ export default function BlogPage() {
     // eslint-disable-next-line
     useEffect(() => {
         getData();
-    });
+        // eslint-disable-next-line
+    }, []);
     // eslint-disable-next-line
     useEffect(() => {
         getImage();
-    })
+        // eslint-disable-next-line
+    }, [])
 
     return (
         <Container className="d-flex flex-column justify-content-left">
-            <Image src={'http://192.168.4.41:1337' + blogImg} fluid className="mt-5 mb-4 img-responsive" />
-            <h2>{blogContents.Title}</h2>
-            <h6><b>by {blogContents.Author}</b></h6>
-            <h6>{blogContents.publishedDate}</h6>
+            <Image src={blogImg} fluid className="mt-5 mb-4 img-responsive" />
+            <h2>{blogContents.blogtitle}</h2>
+            <h6><b>by {blogContents.blogauthor}</b></h6>
+            <h6>{blogContents.blogdate}</h6>
 
-            <p className="mt-4 mb-3">{blogContents.Description}</p>
+            <p className="mt-4 mb-3">{blogContents.blogdesc}</p>
 
         </Container>
     )

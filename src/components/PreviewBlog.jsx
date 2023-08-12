@@ -8,7 +8,8 @@ import axios from 'axios';
 
 function getUrl(obj) {
     //console.log("myObj", obj.attributes.cover.data.attributes.url);
-    return obj.attributes.cover.data.attributes.url;
+    console.log("inspecing obj...", obj);
+    return obj.attributes.blogimg.data.attributes.url;
 }
 
 export default function PreviewBlog() {
@@ -18,7 +19,7 @@ export default function PreviewBlog() {
     const [blogsArray, setBlogsArray] = useState([]);
 
     useEffect(() => {
-        axios.get('http://192.168.4.41:1337/api/blogs?populate=*').then(res => {
+        axios.get('https://tgtbackend.onrender.com/api/blogs?populate=*').then(res => {
             //console.log(res.data.data)
             let topLevelArray = res.data.data;
             let urlArr = [];
@@ -31,7 +32,7 @@ export default function PreviewBlog() {
     }, [])
 
     useEffect(() => {
-        axios.get('http://192.168.4.41:1337/api/blogs').then(res => {
+        axios.get('https://tgtbackend.onrender.com/api/blogs').then(res => {
             //console.log(res.data.data)
             let topLevelArray = res.data.data;
             let blogsArr = [];
@@ -54,9 +55,9 @@ export default function PreviewBlog() {
                 {blogsArray.map((singleBlog, idx) => (
                     <Col key={idx}>
                         <Card className="h-100">
-                            <Card.Img variant="top" src={"http://192.168.4.41:1337" + imgUrlArray[idx]} className="h-100" />
+                            <Card.Img variant="top" src={imgUrlArray[idx]} className="h-100" />
                             <Card.Body>
-                                <Link to={`/listblogs/blog/${idx + 1}`}><Card.Title>{singleBlog.Title}</Card.Title></Link>
+                                <Link to={`/listblogs/blog/${idx + 1}`}><Card.Title>{singleBlog.blogtitle}</Card.Title></Link>
                                 <Card.Text>
                                     {singleBlog.preview}
                                 </Card.Text>
