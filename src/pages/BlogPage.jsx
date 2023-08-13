@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Container, Image } from "react-bootstrap";
 import { getBlogWithWindowID, getImageWithWindowID } from "../api/get-request-api";
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 export default function BlogPage() {
     const [blogContents, setBlogContents] = useState({});
@@ -28,8 +29,9 @@ export default function BlogPage() {
             <h2>{blogContents.blogtitle}</h2>
             <h6><b>by {blogContents.blogauthor}</b></h6>
             <h6>{blogContents.blogdate}</h6>
-
-            <p className="mt-4 mb-3">{blogContents.blogdesc}</p>
+            <ReactMarkdown>
+                {blogContents.blogdesc}
+            </ReactMarkdown>
 
         </Container>
     )
