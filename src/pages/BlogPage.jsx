@@ -1,45 +1,25 @@
 import React, { useEffect, useState } from "react";
 import { Container, Image } from "react-bootstrap";
 import axios from 'axios';
+import { getAllBlogs, getBlogWithWindowID, getImageWithID, getImageWithWindowID } from "../api/get-request-api";
 
 export default function BlogPage() {
     const [blogContents, setBlogContents] = useState({});
     const [blogImg, setBlogImg] = useState({});
 
-    const params = window.location.pathname;
-    //console.log("my url params", params.substring(params.lastIndexOf('/') + 1));
-    const currId = params.substring(params.lastIndexOf('/') + 1);
-    console.log("current id", currId);
-
-    async function getData() {
-        const response = await axios({
-            method: 'get',
-            url: 'https://tgtbackend.onrender.com/api/blogs/' + currId,
-        });
-
-        const { data } = await response;
-        setBlogContents(data.data.attributes);
-    }
-
-    async function getImage() {
-        const response = await axios.get(`https://tgtbackend.onrender.com/api/blogs/${currId}?populate=*`)
-        const { data } = response;
-        const cover = data.data.attributes.blogimg;
-        const imgUrl = cover.data.attributes.url;
-        //const coverImg = cover.data.attributes.formats.large;
-        // console.log('http://localhost:1337' + blogImg.url); - this is what I needed to load the //image
-        console.log("image url", imgUrl)
-        setBlogImg(imgUrl);
-    }
-
     // eslint-disable-next-line
     useEffect(() => {
-        getData();
+        getBlogWithWindowID().then(res => {
+            setBlogContents(res);
+        })
         // eslint-disable-next-line
     }, []);
+
     // eslint-disable-next-line
     useEffect(() => {
-        getImage();
+        getImageWithWindowID().then(res => {
+            setBlogImg(res);
+        })
         // eslint-disable-next-line
     }, [])
 

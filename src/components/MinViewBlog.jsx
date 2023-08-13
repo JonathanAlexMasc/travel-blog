@@ -1,26 +1,14 @@
-import React, { useState, useEffect } from "react";
 import { Container, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import axios from 'axios';
-
-async function getImage(id) {
-    const response = await axios.get(`https://tgtbackend.onrender.com/api/blogs/${id}?populate=*`);
-    const { data } = response;
-
-    const cover = data.data.attributes.blogimg;
-    console.log("inspecing cover...", cover);
-    const coverURL = cover.data.attributes.url;
-    //const coverImg = cover.data.attributes.formats.large;
-    // console.log('http://localhost:1337' + blogImg.url); - this is what I needed to load the //imageverImg
-    console.log(coverURL);
-    return coverURL;
-}
+import { getImageWithID } from "../api/get-request-api";
+import { useState, useEffect } from "react";
 
 export default function MinViewBlog({ id, title, author, date, preview }) {
     const [blogImg, setBlogImg] = useState("");
 
     useEffect(() => {
-        getImage(id).then(res => { setBlogImg(res) });
+        getImageWithID(id).then(res => { setBlogImg(res) });
     }, [id])
 
     return (

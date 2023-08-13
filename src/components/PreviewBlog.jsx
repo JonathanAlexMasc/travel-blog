@@ -5,7 +5,7 @@ import { Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 //this is the main blog component
 import axios from 'axios';
-
+import { getAllImages, getAllBlogs } from "../api/get-request-api";
 function getUrl(obj) {
     //console.log("myObj", obj.attributes.cover.data.attributes.url);
     console.log("inspecing obj...", obj);
@@ -14,29 +14,21 @@ function getUrl(obj) {
 
 export default function PreviewBlog() {
 
-    const [imgUrlArray, setImgUrlArray] = useState([""]);
+    const [imgUrlArray, setImgUrlArray] = useState([]);
     //console.log("imgIrljfboilbgsog", imgUrlArray);
     const [blogsArray, setBlogsArray] = useState([]);
 
     useEffect(() => {
-        axios.get('https://tgtbackend.onrender.com/api/blogs?populate=*').then(res => {
-            //console.log(res.data.data)
-            let topLevelArray = res.data.data;
-            let urlArr = [];
-            urlArr = topLevelArray.map((eachObject) => {
-                return getUrl(eachObject);
-            })
-            console.log("my image url array", topLevelArray);
-            setImgUrlArray(urlArr);
-        });
-    }, [])
+        getAllImages().then(res => {
+            console.log('response', res);
+            setImgUrlArray(res);
+        })
 
-    useEffect(() => {
-        axios.get('https://tgtbackend.onrender.com/api/blogs').then(res => {
-            let topLevelArray = res.data;
-            console.log("my blogs array", topLevelArray.data);
-            setBlogsArray(topLevelArray.data);
-        });
+        getAllBlogs().then(res => {
+            console.log("resulting", res);
+            setBlogsArray(res);
+        })
+
     }, [])
 
     return (
