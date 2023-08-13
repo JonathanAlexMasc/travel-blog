@@ -1,6 +1,5 @@
 import { Container, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import axios from 'axios';
 import { getImageWithID } from "../api/get-request-api";
 import { useState, useEffect } from "react";
 

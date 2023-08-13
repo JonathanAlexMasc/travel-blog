@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Container, Image } from "react-bootstrap";
-import axios from 'axios';
-import { getAllBlogs, getBlogWithWindowID, getImageWithID, getImageWithWindowID } from "../api/get-request-api";
+import { getBlogWithWindowID, getImageWithWindowID } from "../api/get-request-api";
 
 export default function BlogPage() {
     const [blogContents, setBlogContents] = useState({});

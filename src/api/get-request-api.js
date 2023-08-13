@@ -1,5 +1,4 @@
 import axios from "axios";
-import { useState } from "react";
 
 export async function getImageWithID(id) {
     const response = await axios.get(`https://tgtbackend.onrender.com/api/blogs/${id}?populate=*`);

@@ -4,13 +4,7 @@ import { Card } from "react-bootstrap";
 import { Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 //this is the main blog component
-import axios from 'axios';
 import { getAllImages, getAllBlogs } from "../api/get-request-api";
-function getUrl(obj) {
-    //console.log("myObj", obj.attributes.cover.data.attributes.url);
-    console.log("inspecing obj...", obj);
-    return obj.attributes.blogimg.data.attributes.url;
-}
 
 export default function PreviewBlog() {
 
