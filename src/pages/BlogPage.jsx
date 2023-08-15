@@ -28,7 +28,8 @@ export default function BlogPage() {
             <Image src={blogImg} fluid className="mt-5 mb-4 img-responsive" />
             <h2>{blogContents.blogtitle}</h2>
             <h6><b>by {blogContents.blogauthor}</b></h6>
-            <h6>{blogContents.blogdate}</h6>
+            <h6 className="mb-3">{blogContents.blogdate}</h6>
+
             <ReactMarkdown>
                 {blogContents.blogdesc}
             </ReactMarkdown>
