@@ -1,17 +1,22 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+import { Button, Container } from "react-bootstrap";
 import moi from './moi.jpg';
 import Form from 'react-bootstrap/Form';
 
 export default function ContactPage() {
     return (
-        <Container fluid className="d-flex flex-lg-row m-3 p-3">
+        <Container fluid className="d-flex flex-lg-row flex-column m-3 p-3 align-items-center">
             <Container fluid className="p-3">
                 <img src={moi} alt="pic of me" style={{ width: "600px", height: "800px" }}></img>
             </Container>
             <Container fluid className="p-3 m-3 d-flex flex-column">
                 <h3 className="m-3">Please enter your information in this form to reach out to me.</h3>
-                <Form className="m-3" netlify>
+                <Form className="m-3"
+                    name="contact v1"
+                    method="post"
+                    data-netlify="true"
+                    onSubmit="submit"
+                >
                     <Form.Group className="mb-4" controlId="exampleForm.ControlInput1">
                         <Form.Label>Name</Form.Label>
                         <Form.Control type="text" placeholder="John Seed" />
@@ -31,8 +36,13 @@ export default function ContactPage() {
                     </Form.Group>
                     <Form.Group className="mb-4" controlId="exampleForm.ControlTextarea1">
                         <Form.Label>Description</Form.Label>
-                        <Form.Control as="textarea" rows={9} />
+                        <Form.Control type="textarea" rows={9} />
                     </Form.Group>
+                    <div className="d-grid">
+                        <Button variant="primary" size="lg" type="submit">
+                            Submit
+                        </Button>
+                    </div>
                 </Form>
             </Container>
         </Container>
