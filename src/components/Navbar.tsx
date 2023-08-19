@@ -18,7 +18,7 @@ function BasicExample() {
                         <Nav.Link href="/listblogs">Blog</Nav.Link>
                         <Nav.Link href="/about">About</Nav.Link>
                         <NavDropdown title="More" id="basic-nav-dropdown" className='mr-3'>
-                            <NavDropdown.Item href="/about/contact">Contact Us</NavDropdown.Item>
+                            <NavDropdown.Item href="/contact">Contact Us</NavDropdown.Item>
                             {/* <NavDropdown.Item href="#action/3.2">
                                 Another action
                             </NavDropdown.Item>

@@ -4,6 +4,7 @@ import AboutMe from './components/AboutMe';
 import BlogPage from './pages/BlogPage';
 import ListBlogsPage from './pages/ListBlogsPage';
 import Footer from './components/Footer';
+import ContactPage from './pages/ContactPage';
 import "./App.css";
 
 import { createBrowserRouter, Route, createRoutesFromElements, RouterProvider } from 'react-router-dom';
@@ -18,6 +19,7 @@ const router = createBrowserRouter(
       <Route path="/about" element={<AboutMe />} />
       <Route path="/listblogs/blog/:blogId" element={<BlogPage />} />
       <Route path="/listblogs" element={<ListBlogsPage />} />
+      <Route path="/contact" element={<ContactPage />} />
     </Route>
 
   )
