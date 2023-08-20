@@ -47,6 +47,9 @@ export default function ContactPage() {
                 </Form> */}
                 <form name="contact" method="post">
                     <input type="hidden" name="form-name" value="contact" />
+                    <div hidden>
+                        <input name="bot-field" />
+                    </div>
                     <p>
                         <label htmlFor="name">Name</label> <br />
                         <input type="text" id="name" name="name" required />
