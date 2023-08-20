@@ -2,6 +2,7 @@ import React from "react";
 import { Container } from "react-bootstrap";
 import moi from './moi.jpg';
 
+
 export default function ContactPage() {
     return (
         <Container fluid className="d-flex flex-lg-row flex-column m-3 p-3 align-items-center">
@@ -44,44 +45,23 @@ export default function ContactPage() {
                         </Button>
                     </div>
                 </Form> */}
-                <form
-                    name="contact v2"
-                    method="post"
-                    data-netlify="true"
-                    onSubmit="submit"
-                    data-netlify-honeypot="bot-field"
-                >
-                    <input type="hidden" name="form-name" value="contact v2" />
-
-                    <div hidden>
-                        <input name="bot-field" />
-                    </div>
-
-                    <div>
-                        <label>First name<br />
-                            <input type="text" name="first-name" />
-                        </label>
-                    </div>
-
-                    <div>
-                        <label>Last name<br />
-                            <input type="text" name="last-name" />
-                        </label>
-                    </div>
-
-                    <div>
-                        <label htmlFor="email" >Email</label><br />
-                        <input id="email" type="email" name="email" />
-                    </div>
-
-                    <div>
-                        <label>Any Comments?<br />
-                            <textarea name="comments"></textarea>
-                        </label>
-                    </div>
-
-                    <button type="submit">Submit The Results</button>
-
+                <form name="contact" method="post">
+                    <input type="hidden" name="form-name" value="contact" />
+                    <p>
+                        <label htmlFor="name">Name</label> <br />
+                        <input type="text" id="name" name="name" required />
+                    </p>
+                    <p>
+                        <label htmlFor="email">Email</label> <br />
+                        <input type="email" id="email" name="email" required />
+                    </p>
+                    <p>
+                        <label htmlFor="message">Message</label> <br />
+                        <textarea id="message" name="message" required></textarea>
+                    </p>
+                    <p>
+                        <input type="submit" value="Submit message" />
+                    </p>
                 </form>
 
             </Container>
