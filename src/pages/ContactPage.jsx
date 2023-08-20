@@ -1,7 +1,6 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 import moi from './moi.jpg';
-import { Form, Button } from "react-bootstrap";
 
 export default function ContactPage() {
 
@@ -12,67 +11,28 @@ export default function ContactPage() {
             </Container>
             <Container fluid className="p-3 m-3 d-flex flex-column">
                 <h3 className="m-3">Please enter your information in this form to reach out to me.</h3>
-                <Form className="m-3"
-                    name="contact v2"
-                    method="post"
-                    data-netlify="true"
-                    onSubmit="submit"
-                    netlify
-                    netlify-honeypot="bot-field"
-                    data-netlify-honeput="bot-field"
-                >
-                    <input type="hidden" name="form-name" value="contact v2" />
-                    <div hidden>
-                        <input name="bot-field" />
-                    </div>
-                    <Form.Group className="mb-4" controlId="exampleForm.ControlInput1">
-                        <Form.Label>Name</Form.Label>
-                        <Form.Control type="text" placeholder="John Seed" />
-                    </Form.Group>
-                    <Form.Group className="mb-4" controlId="exampleForm.ControlInput2">
-                        <Form.Label>Email address</Form.Label>
-                        <Form.Control type="email" placeholder="name@example.com" />
-                    </Form.Group>
-                    {/* <Form.Group className="mb-4">
-                        <Form.Label>More about you</Form.Label>
-                        <Form.Select type="text" aria-label="Default select example" onChange={handleChange}>
-                            <option>Select Contact Type</option>
-                            <option value="1">Recruiter</option>
-                            <option value="2">Potential Client</option>
-                            <option value="3">Looking for consultation/mentoring</option>
-                        </Form.Select>
-                    </Form.Group> */}
-                    <Form.Group className="mb-4" controlId="exampleForm.ControlTextarea1">
-                        <Form.Label>Description</Form.Label>
-                        <Form.Control type="textarea" rows={9} />
-                    </Form.Group>
-                    <div className="d-grid">
-                        <Button variant="primary" size="lg" type="submit">
-                            Submit
-                        </Button>
-                    </div>
-                </Form>
-                {/* <form name="contact" method="post">
+
+                <form name="contact" method="post" className="w-full m-3">
                     <input type="hidden" name="form-name" value="contact" />
                     <div hidden>
                         <input name="bot-field" />
                     </div>
-                    <p>
+                    <p className="mb-3">
                         <label htmlFor="name">Name</label> <br />
-                        <input type="text" id="name" name="name" required />
+                        <input className="form-control" type="text" id="name" name="name" required />
                     </p>
-                    <p>
+                    <p className="mb-3">
                         <label htmlFor="email">Email</label> <br />
-                        <input type="email" id="email" name="email" required />
+                        <input className="form-control" type="email" id="email" name="email" required />
                     </p>
-                    <p>
+                    <p className="mb-3">
                         <label htmlFor="message">Message</label> <br />
-                        <textarea id="message" name="message" required></textarea>
+                        <textarea className="form-control" id="message" name="message" required></textarea>
                     </p>
-                    <p>
-                        <input type="submit" value="Submit message" />
+                    <p className="mb-3">
+                        <input className="form-control" type="submit" value="Submit message" />
                     </p>
-                </form> */}
+                </form>
 
             </Container>
         </Container>
