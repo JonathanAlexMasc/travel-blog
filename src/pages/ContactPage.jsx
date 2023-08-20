@@ -21,7 +21,7 @@ export default function ContactPage() {
                     netlify-honeypot="bot-field"
                     data-netlify-honeput="bot-field"
                 >
-                    <input type="hidden" name="form-name" value="contact" />
+                    <input type="hidden" name="form-name" value="contact v2" />
                     <div hidden>
                         <input name="bot-field" />
                     </div>
