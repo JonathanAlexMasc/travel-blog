@@ -1,7 +1,6 @@
 import React from "react";
-import { Button, Container } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import moi from './moi.jpg';
-import Form from 'react-bootstrap/Form';
 
 export default function ContactPage() {
     return (
