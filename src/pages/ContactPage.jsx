@@ -12,7 +12,7 @@ export default function ContactPage() {
             <Container fluid className="p-3 m-3 d-flex flex-column">
                 <h3 className="m-3">Please enter your information in this form to reach out to me.</h3>
 
-                <form name="contact" method="post" className="w-full m-3">
+                <form name="contact v2" method="post" className="w-full m-3">
                     <input type="hidden" name="form-name" value="contact" />
                     <div hidden>
                         <input name="bot-field" />
