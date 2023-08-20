@@ -11,11 +11,12 @@ export default function ContactPage() {
             </Container>
             <Container fluid className="p-3 m-3 d-flex flex-column">
                 <h3 className="m-3">Please enter your information in this form to reach out to me.</h3>
-                <Form className="m-3"
+                {/* <Form className="m-3"
                     name="contact v1"
                     method="post"
                     data-netlify="true"
                     onSubmit="submit"
+                    netlify
                 >
                     <Form.Group className="mb-4" controlId="exampleForm.ControlInput1">
                         <Form.Label>Name</Form.Label>
@@ -43,7 +44,47 @@ export default function ContactPage() {
                             Submit
                         </Button>
                     </div>
-                </Form>
+                </Form> */}
+                <form
+                    name="contact v2"
+                    method="post"
+                    data-netlify="true"
+                    onSubmit="submit"
+                    data-netlify-honeypot="bot-field"
+                >
+                    <input type="hidden" name="form-name" value="contact v2" />
+
+                    <div hidden>
+                        <input name="bot-field" />
+                    </div>
+
+                    <div>
+                        <label>First name<br />
+                            <input type="text" name="first-name" />
+                        </label>
+                    </div>
+
+                    <div>
+                        <label>Last name<br />
+                            <input type="text" name="last-name" />
+                        </label>
+                    </div>
+
+                    <div>
+                        <label htmlFor="email" >Email</label><br />
+                        <input id="email" type="email" name="email" />
+                    </div>
+
+                    <div>
+                        <label>Any Comments?<br />
+                            <textarea name="comments"></textarea>
+                        </label>
+                    </div>
+
+                    <button type="submit">Submit The Results</button>
+
+                </form>
+
             </Container>
         </Container>
     )
