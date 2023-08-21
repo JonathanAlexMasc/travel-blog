@@ -14,7 +14,7 @@ export default function MinViewBlog({ id, title, author, date, preview }) {
         <div>
             <Container className="d-flex flex-column flex-lg-row my-3 p-4 gap-5 ">
                 <Container fluid>
-                    <Image src={blogImg} fluid className="mr-4 img-responsive" style={{ width: "900px", height: "380px" }} />
+                    <Image src={blogImg} fluid className="mr-4 img-responsive" />
                 </Container>
                 <Container fluid className="d-flex flex-column mr-5 gap-2 justify-content-evenly">
                     <div className="d-flex flex-row">
