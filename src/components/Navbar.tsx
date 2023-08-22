@@ -4,7 +4,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
 const handleClick = () => {
-    console.log('registered click');
+    //console.log('registered click');
 }
 
 function BasicExample() {

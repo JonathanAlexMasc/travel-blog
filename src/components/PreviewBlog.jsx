@@ -14,12 +14,12 @@ export default function PreviewBlog() {
 
     useEffect(() => {
         getAllImages().then(res => {
-            console.log('response', res);
+            //console.log('response', res);
             setImgUrlArray(res);
         })
 
         getAllBlogs().then(res => {
-            console.log("resulting", res);
+            //console.log("resulting", res);
             setBlogsArray(res);
         })
 
